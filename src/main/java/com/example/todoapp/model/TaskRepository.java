@@ -19,4 +19,6 @@ public interface TaskRepository {
     Task save(Task task);
 
     boolean existsById(Integer id);
+
+    void deleteById(Integer id);
 }
