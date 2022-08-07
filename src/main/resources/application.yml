@@ -7,6 +7,8 @@ spring:
    console:
     enabled: true
     path: '/console'
+  main:
+   banner-mode: off
   datasource:
    url: 'jdbc:h2:file:C:/Users/jjo/IdeaProjects/todo-app/todo-db'
   jpa:
