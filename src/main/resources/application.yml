@@ -3,16 +3,12 @@ server:
     include-message: always
     include-binding-errors: always
 spring:
-  h2:
-   console:
-    enabled: true
-    path: '/console'
+  profiles:
+    active: local
   main:
    banner-mode: off
-  datasource:
-   url: 'jdbc:h2:file:C:/Users/jjo/IdeaProjects/todo-app/todo-db'
-  jpa:
-  hibernate:
-  ddl-auto: create-drop
-my.prop: 'test'
+   jpa:
+     hibernate:
+     ddl-auto: create-drop
+   my.prop: 'test'
 task.allowMultipleTasksFromTemplate: false

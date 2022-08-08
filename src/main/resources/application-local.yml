@@ -1,0 +1,11 @@
+spring:
+  h2:
+   console:
+    enabled: true
+    path: '/console'
+  datasource:
+   url: 'jdbc:h2:file:C:/Users/jjo/IdeaProjects/todo-app/todo-db'
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway.baselineOnMigrate: true
