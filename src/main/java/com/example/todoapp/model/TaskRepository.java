@@ -21,4 +21,6 @@ public interface TaskRepository {
     boolean existsById(Integer id);
 
     void deleteById(Integer id);
+
+    boolean existsByDoneIsFalseAndGroup_Id(Integer id);
 }

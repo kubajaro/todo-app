@@ -2,6 +2,7 @@ package com.example.todoapp.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
@@ -12,6 +13,12 @@ public class Task {
     @NotBlank(message = "This field should contain text")
     private String description;
     private boolean done;
+    private LocalDateTime deadline;
+    @Embedded
+    private Audit audit = new Audit();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "task_group_id")
+    private TaskGroup group;
 
     public Task() {
     }
@@ -38,5 +45,28 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(LocalDateTime deadline) {
+        this.deadline = deadline;
+    }
+
+    public TaskGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(TaskGroup group) {
+        this.group = group;
+    }
+
+    public void updateFrom(final Task source) {
+        description = source.description;
+        done = source.done;
+        deadline = source.deadline;
+        group = source.group;
     }
 }
