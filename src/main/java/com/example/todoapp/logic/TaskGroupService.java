@@ -1,6 +1,5 @@
 package com.example.todoapp.logic;
 
-import com.example.todoapp.TaskConfigurationProperties;
 import com.example.todoapp.model.TaskGroup;
 import com.example.todoapp.model.TaskGroupRepository;
 import com.example.todoapp.model.TaskRepository;
@@ -15,13 +14,11 @@ import java.util.stream.Collectors;
 public class TaskGroupService {
     private TaskGroupRepository repository;
     private TaskRepository taskRepository;
-    //private TaskConfigurationProperties config;
 
-    public TaskGroupService(final TaskGroupRepository taskGroupRepository
-                            //final TaskConfigurationProperties config
-                            ) {
+    public TaskGroupService(final TaskGroupRepository taskGroupRepository,
+                            TaskRepository taskRepository) {
         this.repository = taskGroupRepository;
-        //this.config = config;
+        this.taskRepository = taskRepository;
     }
 
     public GroupReadModel createGroup(GroupWriteModel source) {
