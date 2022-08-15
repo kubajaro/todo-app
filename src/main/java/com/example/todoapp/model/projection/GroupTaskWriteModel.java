@@ -1,6 +1,7 @@
 package com.example.todoapp.model.projection;
 
 import com.example.todoapp.model.Task;
+import com.example.todoapp.model.TaskGroup;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -25,7 +26,7 @@ public class GroupTaskWriteModel {
         this.deadline = deadline;
     }
 
-    public Task toTask() {
+    public Task toTask(final TaskGroup result) {
         return new Task(description, deadline);
     }
 }

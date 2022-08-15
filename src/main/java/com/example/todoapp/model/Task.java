@@ -28,6 +28,12 @@ public class Task {
         this.deadline = deadline;
     }
 
+    public Task(String description, boolean done, TaskGroup group) {
+        this.description = description;
+        this.done = done;
+        this.group = group;
+    }
+
     public int getId() {
         return id;
     }

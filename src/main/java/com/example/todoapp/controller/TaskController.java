@@ -59,7 +59,7 @@ public class TaskController {
     }
 
     @DeleteMapping("/tasks/{id}")
-    ResponseEntity<Valid> deleteTaskById(@PathVariable int id) {
+    ResponseEntity<Void> deleteTaskById(@PathVariable int id) {
         if(!taskRepository.existsById(id)){
             return ResponseEntity.notFound().build();
         }

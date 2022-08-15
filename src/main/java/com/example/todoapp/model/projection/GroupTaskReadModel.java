@@ -26,6 +26,4 @@ public class GroupTaskReadModel {
     public void setDone(boolean done) {
         this.done = done;
     }
-
-
 }
