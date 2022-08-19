@@ -1,6 +1,5 @@
 package com.example.todoapp;
 
-import org.springframework.boot.autoconfigure.jms.JmsProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 

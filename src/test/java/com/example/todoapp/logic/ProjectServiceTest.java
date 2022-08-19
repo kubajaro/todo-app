@@ -14,9 +14,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.assertj.core.api.AssertionsForClassTypes.catchThrowable;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -125,7 +122,7 @@ class ProjectServiceTest {
                 }).collect(Collectors.toList());
         var result = mock(Project.class);
         when(result.getDescription()).thenReturn(projectDescription);
-        when(result.getSteps()).thenReturn(steps);
+        when(result.getSteps()).thenReturn((Set<ProjectStep>) steps);
         return result;
     }
 

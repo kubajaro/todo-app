@@ -2,13 +2,22 @@ server:
   error:
     include-message: always
     include-binding-errors: always
+  port: 8081
 spring:
   profiles:
-    active: local
+    active: 'local'
   main:
    banner-mode: off
    jpa:
      hibernate:
      ddl-auto: create-drop
    my.prop: 'test'
-task.allowMultipleTasksFromTemplate: false
+   allow-circular-references: true
+task:
+  template:
+    allow-multiple-tasks: false
+keycloak:
+  auth-server-url: 'http://localhost:8080/auth'
+  realm: 'todoapp'
+  resource: 'todo-spring-client'
+  public-client: true

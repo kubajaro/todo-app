@@ -22,15 +22,16 @@ public class LogicConfiguration {
         result.setDriverClassName("org.h2.Driver");
         return result;
     }
-    @Bean
-    @Primary
-    @Profile("integration")
-    ProjectService service(final ProjectRepository repository,
-                           final TaskGroupRepository taskGroupRepository,
-                           final TaskGroupService taskGroupService,
-                           final TaskConfigurationProperties config) {
-        return new ProjectService(repository, taskGroupRepository, taskGroupService, config);
-    }
+
+//    @Bean
+//    @Primary
+//    @Profile("integration")
+//    ProjectService service(final ProjectRepository repository,
+//                           final TaskGroupRepository taskGroupRepository,
+//                           final TaskGroupService taskGroupService,
+//                           final TaskConfigurationProperties config) {
+//        return new ProjectService(repository, taskGroupRepository, taskGroupService, config);
+//    }
 
     @Bean
     TaskGroupService taskGroupService(final TaskGroupRepository taskGroupRepository,
